@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Battleship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="JS/battleship.js"></script>
+</head>
+
+<body>
+
+<main>
+
+    <div id="user-input" class="div-style">
+        <h2 id="enter-name">Enter Player 1's name</h2>
+
+        <div class="input-container">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <h2>Enter the ships' coordinates</h2>
+
+        <h3>Note: </h3>
+        <ul>
+            <li>
+                An aircraft carrier is 5 spaces long.
+            </li>
+            <li>
+                A battleship is 4 spaces long.
+            </li>
+            <li>
+                A submarine is 3 spaces long.
+            </li>
+            <li>
+                Ships can be placed either horizontally or vertically.
+            </li>
+            <li>
+                The game is built on a 10x10 grid with rows labeled 1-10 and columns labeled A-J.
+            </li>
+        </ul>
+
+        <div class="input-container">
+            <label for="player-input">Input coordinates: </label>
+            <input type="text" id="player-input" name="player-input" placeholder="A(A1-A5);B(B6-E6);S(H3-J3)" required>
+        </div>
+
+
+        <div id="button-wrapper">
+            <input type="submit" id="submit-button" value="SUBMIT">
+            <input type="submit" id="submit-button-2" value="BEGIN GAME">
+        </div>
+
+        <div id="error-msg-name">
+        </div>
+
+        <div id="error-msg">
+        </div>
+    </div>
+
+    <div id="begin-turn" class="div-style">
+        <h2 id="begin-turn-header">Click the button to begin Player 1's turn</h2>
+        <input type="submit" id="begin-turn-button" value="BEGIN TURN">
+    </div>
+
+    <div id="board-game-container">
+        <div id="board-1-div" class="board-spacing1">
+            <h2 id="ship-placement-header">Player 1's ship placements</h2>
+            <table id="board-1">
+                <tr id="row-1-1">
+                    <td id="A1-1">
+                    </td>
+                    <td id="B1-1">
+                    </td>
+                    <td id="C1-1">
+                    </td>
+                    <td id="D1-1">
+                    </td>
+                    <td id="E1-1">
+                    </td>
+                    <td id="F1-1">
+                    </td>
+                    <td id="G1-1">
+                    </td>
+                    <td id="H1-1">
+                    </td>
+                    <td id="I1-1">
+                    </td>
+                    <td id="J1-1">
+                    </td>
+                </tr>
+                <tr id="row-2-1">
+                    <td id="A2-1">
+                    </td>
+                    <td id="B2-1">
+                    </td>
+                    <td id="C2-1">
+                    </td>
+                    <td id="D2-1">
+                    </td>
+                    <td id="E2-1">
+                    </td>
+                    <td id="F2-1">
+                    </td>
+                    <td id="G2-1">
+                    </td>
+                    <td id="H2-1">
+                    </td>
+                    <td id="I2-1">
+                    </td>
+                    <td id="J2-1">
+                    </td>
+                </tr>
+                <tr id="row-3-1">
+                    <td id="A3-1">
+                    </td>
+                    <td id="B3-1">
+                    </td>
+                    <td id="C3-1">
+                    </td>
+                    <td id="D3-1">
+                    </td>
+                    <td id="E3-1">
+                    </td>
+                    <td id="F3-1">
+                    </td>
+                    <td id="G3-1">
+                    </td>
+                    <td id="H3-1">
+                    </td>
+                    <td id="I3-1">
+                    </td>
+                    <td id="J3-1">
+                    </td>
+                </tr>
+                <tr id="row-4-1">
+                    <td id="A4-1">
+                    </td>
+                    <td id="B4-1">
+                    </td>
+                    <td id="C4-1">
+                    </td>
+                    <td id="D4-1">
+                    </td>
+                    <td id="E4-1">
+                    </td>
+                    <td id="F4-1">
+                    </td>
+                    <td id="G4-1">
+                    </td>
+                    <td id="H4-1">
+                    </td>
+                    <td id="I4-1">
+                    </td>
+                    <td id="J4-1">
+                    </td>
+                </tr>
+                <tr id="row-5-1">
+                    <td id="A5-1">
+                    </td>
+                    <td id="B5-1">
+                    </td>
+                    <td id="C5-1">
+                    </td>
+                    <td id="D5-1">
+                    </td>
+                    <td id="E5-1">
+                    </td>
+                    <td id="F5-1">
+                    </td>
+                    <td id="G5-1">
+                    </td>
+                    <td id="H5-1">
+                    </td>
+                    <td id="I5-1">
+                    </td>
+                    <td id="J5-1">
+                    </td>
+                </tr>
+                <tr id="row-6-1">
+                    <td id="A6-1">
+                    </td>
+                    <td id="B6-1">
+                    </td>
+                    <td id="C6-1">
+                    </td>
+                    <td id="D6-1">
+                    </td>
+                    <td id="E6-1">
+                    </td>
+                    <td id="F6-1">
+                    </td>
+                    <td id="G6-1">
+                    </td>
+                    <td id="H6-1">
+                    </td>
+                    <td id="I6-1">
+                    </td>
+                    <td id="J6-1">
+                    </td>
+                </tr>
+                <tr id="row-7-1">
+                    <td id="A7-1">
+                    </td>
+                    <td id="B7-1">
+                    </td>
+                    <td id="C7-1">
+                    </td>
+                    <td id="D7-1">
+                    </td>
+                    <td id="E7-1">
+                    </td>
+                    <td id="F7-1">
+                    </td>
+                    <td id="G7-1">
+                    </td>
+                    <td id="H7-1">
+                    </td>
+                    <td id="I7-1">
+                    </td>
+                    <td id="J7-1">
+                    </td>
+                </tr>
+                <tr id="row-8-1">
+                    <td id="A8-1">
+                    </td>
+                    <td id="B8-1">
+                    </td>
+                    <td id="C8-1">
+                    </td>
+                    <td id="D8-1">
+                    </td>
+                    <td id="E8-1">
+                    </td>
+                    <td id="F8-1">
+                    </td>
+                    <td id="G8-1">
+                    </td>
+                    <td id="H8-1">
+                    </td>
+                    <td id="I8-1">
+                    </td>
+                    <td id="J8-1">
+                    </td>
+                </tr>
+                <tr id="row-9-1">
+                    <td id="A9-1">
+                    </td>
+                    <td id="B9-1">
+                    </td>
+                    <td id="C9-1">
+                    </td>
+                    <td id="D9-1">
+                    </td>
+                    <td id="E9-1">
+                    </td>
+                    <td id="F9-1">
+                    </td>
+                    <td id="G9-1">
+                    </td>
+                    <td id="H9-1">
+                    </td>
+                    <td id="I9-1">
+                    </td>
+                    <td id="J9-1">
+                    </td>
+                </tr>
+                <tr id="row-10-1">
+                    <td id="A10-1">
+                    </td>
+                    <td id="B10-1">
+                    </td>
+                    <td id="C10-1">
+                    </td>
+                    <td id="D10-1">
+                    </td>
+                    <td id="E10-1">
+                    </td>
+                    <td id="F10-1">
+                    </td>
+                    <td id="G10-1">
+                    </td>
+                    <td id="H10-1">
+                    </td>
+                    <td id="I10-1">
+                    </td>
+                    <td id="J10-1">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="board-2-div" class="board-spacing2">
+            <h2 id="target-header">Player 1's target</h2>
+            <table id="board-2">
+                <tr id="row-1-2">
+                    <td id="A1-2">
+                    </td>
+                    <td id="B1-2">
+                    </td>
+                    <td id="C1-2">
+                    </td>
+                    <td id="D1-2">
+                    </td>
+                    <td id="E1-2">
+                    </td>
+                    <td id="F1-2">
+                    </td>
+                    <td id="G1-2">
+                    </td>
+                    <td id="H1-2">
+                    </td>
+                    <td id="I1-2">
+                    </td>
+                    <td id="J1-2">
+                    </td>
+                </tr>
+                <tr id="row-2-2">
+                    <td id="A2-2">
+                    </td>
+                    <td id="B2-2">
+                    </td>
+                    <td id="C2-2">
+                    </td>
+                    <td id="D2-2">
+                    </td>
+                    <td id="E2-2">
+                    </td>
+                    <td id="F2-2">
+                    </td>
+                    <td id="G2-2">
+                    </td>
+                    <td id="H2-2">
+                    </td>
+                    <td id="I2-2">
+                    </td>
+                    <td id="J2-2">
+                    </td>
+                </tr>
+                <tr id="row-3-2">
+                    <td id="A3-2">
+                    </td>
+                    <td id="B3-2">
+                    </td>
+                    <td id="C3-2">
+                    </td>
+                    <td id="D3-2">
+                    </td>
+                    <td id="E3-2">
+                    </td>
+                    <td id="F3-2">
+                    </td>
+                    <td id="G3-2">
+                    </td>
+                    <td id="H3-2">
+                    </td>
+                    <td id="I3-2">
+                    </td>
+                    <td id="J3-2">
+                    </td>
+                </tr>
+                <tr id="row-4-2">
+                    <td id="A4-2">
+                    </td>
+                    <td id="B4-2">
+                    </td>
+                    <td id="C4-2">
+                    </td>
+                    <td id="D4-2">
+                    </td>
+                    <td id="E4-2">
+                    </td>
+                    <td id="F4-2">
+                    </td>
+                    <td id="G4-2">
+                    </td>
+                    <td id="H4-2">
+                    </td>
+                    <td id="I4-2">
+                    </td>
+                    <td id="J4-2">
+                    </td>
+                </tr>
+                <tr id="row-5-2">
+                    <td id="A5-2">
+                    </td>
+                    <td id="B5-2">
+                    </td>
+                    <td id="C5-2">
+                    </td>
+                    <td id="D5-2">
+                    </td>
+                    <td id="E5-2">
+                    </td>
+                    <td id="F5-2">
+                    </td>
+                    <td id="G5-2">
+                    </td>
+                    <td id="H5-2">
+                    </td>
+                    <td id="I5-2">
+                    </td>
+                    <td id="J5-2">
+                    </td>
+                </tr>
+                <tr id="row-6-2">
+                    <td id="A6-2">
+                    </td>
+                    <td id="B6-2">
+                    </td>
+                    <td id="C6-2">
+                    </td>
+                    <td id="D6-2">
+                    </td>
+                    <td id="E6-2">
+                    </td>
+                    <td id="F6-2">
+                    </td>
+                    <td id="G6-2">
+                    </td>
+                    <td id="H6-2">
+                    </td>
+                    <td id="I6-2">
+                    </td>
+                    <td id="J6-2">
+                    </td>
+                </tr>
+                <tr id="row-7-2">
+                    <td id="A7-2">
+                    </td>
+                    <td id="B7-2">
+                    </td>
+                    <td id="C7-2">
+                    </td>
+                    <td id="D7-2">
+                    </td>
+                    <td id="E7-2">
+                    </td>
+                    <td id="F7-2">
+                    </td>
+                    <td id="G7-2">
+                    </td>
+                    <td id="H7-2">
+                    </td>
+                    <td id="I7-2">
+                    </td>
+                    <td id="J7-2">
+                    </td>
+                </tr>
+                <tr id="row-8-2">
+                    <td id="A8-2">
+                    </td>
+                    <td id="B8-2">
+                    </td>
+                    <td id="C8-2">
+                    </td>
+                    <td id="D8-2">
+                    </td>
+                    <td id="E8-2">
+                    </td>
+                    <td id="F8-2">
+                    </td>
+                    <td id="G8-2">
+                    </td>
+                    <td id="H8-2">
+                    </td>
+                    <td id="I8-2">
+                    </td>
+                    <td id="J8-2">
+                    </td>
+                </tr>
+                <tr id="row-9-2">
+                    <td id="A9-2">
+                    </td>
+                    <td id="B9-2">
+                    </td>
+                    <td id="C9-2">
+                    </td>
+                    <td id="D9-2">
+                    </td>
+                    <td id="E9-2">
+                    </td>
+                    <td id="F9-2">
+                    </td>
+                    <td id="G9-2">
+                    </td>
+                    <td id="H9-2">
+                    </td>
+                    <td id="I9-2">
+                    </td>
+                    <td id="J9-2">
+                    </td>
+                </tr>
+                <tr id="row-10-2">
+                    <td id="A10-2">
+                    </td>
+                    <td id="B10-2">
+                    </td>
+                    <td id="C10-2">
+                    </td>
+                    <td id="D10-2">
+                    </td>
+                    <td id="E10-2">
+                    </td>
+                    <td id="F10-2">
+                    </td>
+                    <td id="G10-2">
+                    </td>
+                    <td id="H10-2">
+                    </td>
+                    <td id="I10-2">
+                    </td>
+                    <td id="J10-2">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="overlay-div">
+        </div>
+
+    </div>
+
+    <div id="score-div">
+    </div>
+
+</main>
+
+</body>
+
+</html>

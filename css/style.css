@@ -1,0 +1,206 @@
+body {
+    background-color: #ededed;
+    font-family: 'roboto', arial, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 20px 0 20px 0;
+}
+
+h3 {
+    margin: 20px 0 20px 0;
+}
+
+input {
+    border: 1px solid #000000;
+    font-size: 1em;
+    padding: 5px;
+}
+
+input[type=text] {
+    margin: 10px 0 0 0;
+    width: calc(100% - 12px);
+}
+
+input[type=submit] {
+    background-color: #add8e6;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 5px;
+    width: 100%;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+    background-color: #99cfe0;
+}
+
+label {
+    font-weight: bold;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 0;
+    max-height: 100%;
+    min-height: 100vh;
+    padding: 0;
+}
+
+table {
+    background-color: #ADD8E6;
+    border: 4px solid #000000;
+    border-spacing: 0;
+    table-layout: fixed;
+    z-index: 1;
+}
+
+td {
+    border: 2px solid #000000;
+    font-size: 21px;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+#begin-turn {
+    display: none;
+}
+
+#begin-turn h2 {
+    text-align: center;
+}
+
+#begin-turn input {
+    margin: 0 0 10px 0;
+}
+
+#board-game-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+#board-1-div {
+    display: none;
+    z-index: 1;
+}
+
+#board-2-div {
+    display: none;
+    z-index: 1;
+}
+
+#board-1-div h2, #board-2-div h2 {
+    text-align: center;
+}
+
+#error-msg {
+    margin: 10px 0 0 0;
+}
+
+#overlay-div {
+    align-items: center;
+    background: rgba(0, 0, 0, .8);
+    color: #FFFFFF;
+    display: none;
+    font-size: 52px;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    text-shadow: 1.5px 1.5px 1px #000000;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+}
+
+#score-div {
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: none;
+    font-size: 2.5em;
+    margin: 40px;
+    padding: 40px;
+    width: 50%;
+}
+
+#score-div h3 {
+    font-size: 3em;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+#score-div ul {
+    margin: 40px 0 0 0;
+}
+
+#submit-button-2 {
+    display: none;
+}
+
+#user-input h2 {
+    background-color: #ededed;
+    border-bottom: 1px solid #000000;
+    padding: 5px;
+}
+
+#user-input ul {
+    margin: 20px 0 20px 0;
+}
+
+.board-spacing1 {
+    padding: 12.5px 50px 0 50px;
+}
+
+/* This makes it so there's a bigger space below this div in the smaller screen size */
+.board-spacing2 {
+    padding: 12.5px 50px 35px 50px;
+}
+
+.div-style {
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 40px;
+    padding: 0 20px 10px 20px;
+    width: 75%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
+@media screen and (min-width: 832px) {
+    input[type=text] {
+        margin: 0 0 0 10px;
+        width: 50%;
+    }
+
+    .div-style {
+        width: 50%;
+    }
+
+    .input-container {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    main {
+        height: calc(100vh - 100%);
+    }
+
+    #board-game-container {
+        display: flex;
+        flex-direction: row;
+        z-index: 0;
+    }
+}
