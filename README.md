@@ -1,7 +1,7 @@
 # Battleship Web Application
 This is a project from CS 1520, Programming Languages for Web Applications. I created a two-player Battleship game with two 10x10 gameboards. 
 
-Though the project description did not require extensive styling or responsivity, I tried to make the web application as neat and user-friendly as possible. However, it is not 100% responsive, as the web application only needed to be viewable on a desktop browser.
+Though the project description did not require extensive styling or responsivity, I tried to make the web application as neat and user-friendly as possible. **However, it is not 100% responsive, as the web application only needed to be viewable on a desktop browser**.
 
 ### :point_right: Visit the [following url](https://valeriehosler.com/Battleship/) to view a live demo.
 
